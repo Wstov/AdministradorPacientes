@@ -1,22 +1,40 @@
 import { useState } from "react"
 
-const Formulario = () => {
+const Formulario = ({ pacientes, setPacientes }) => {
     const [nombre, setNombre] = useState('')
     const [propietario, setPropietario] = useState('')
     const [email, setEmail] = useState('')
-    const [fechas, setFechas] = useState('')
-    const [sintomas, seSintomas] = useState('')
+    const [fecha, setFecha] = useState('')
+    const [sintomas, setSintomas] = useState('')
 
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        const objetoPaciente = {
+            nombre,
+            propietario,
+            email,
+            fecha,
+            sintomas
+
+        }
+
+        setPacientes([...pacientes, objetoPaciente])
+
+        setNombre('')
+        setPropietario('')
+        setEmail('')
+        setFecha('')
+        setSintomas('')
+
     }
 
 
 
     return (
-        <div className="md:w-1/2 lg:w-2/5 mx-5">
+        <div className="md:w-1/2 lg:w-2/5 mx-5 ">
             <h2 className='font-black text-3xl text-center'>Desde pacientes</h2>
             <p className="text-xl mt-5 mb-10 text-center">
                 Añade Pacientes y {''}
@@ -74,8 +92,8 @@ const Formulario = () => {
                         id="alta"
                         type="date"
                         className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                        value={fechas}
-                        onChange={(e) => setFechas(e.target.value)}
+                        value={fecha}
+                        onChange={(e) => setFecha(e.target.value)}
                     />
                 </div>
 
