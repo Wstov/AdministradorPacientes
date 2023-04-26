@@ -18,7 +18,6 @@ const Formulario = ({ pacientes, setPacientes }) => {
             email,
             fecha,
             sintomas
-
         }
 
         setPacientes([...pacientes, objetoPaciente])
@@ -35,7 +34,7 @@ const Formulario = ({ pacientes, setPacientes }) => {
 
     return (
         <div className="md:w-1/2 lg:w-2/5 mx-5 ">
-            <h2 className='font-black text-3xl text-center'>Desde pacientes</h2>
+            <h2 className='font-black text-3xl text-center'>Registro de Pacientes</h2>
             <p className="text-xl mt-5 mb-10 text-center">
                 Añade Pacientes y {''}
                 <span className="text-emerald-600 font-bold ">Administralos</span>
@@ -106,7 +105,7 @@ const Formulario = ({ pacientes, setPacientes }) => {
                         className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                         placeholder="Describe los Sintomas"
                         value={sintomas}
-                        onChange={(e) => seSintomas(e.target.value)}
+                        onChange={(e) => setSintomas(e.target.value)}
                     ></textarea>
 
                 </div>
