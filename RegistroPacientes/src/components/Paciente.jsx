@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Paciente = ({paciente}) => {
+const Paciente = ({paciente, eliminarPaciente}) => {
 //DISTRUCTURIN
-const {nombre, propietario, email, fecha, sintomas} =  paciente
+const {nombre, propietario, email, fecha, sintomas, id} =  paciente
 
 
     return (
@@ -32,6 +32,7 @@ const {nombre, propietario, email, fecha, sintomas} =  paciente
                     type='button'
                     className='py-2 px-10 bg-red-600 hover:bg-red-500 text-white font-bold
                     uppercase rounded-lg'
+                    onClick={() => eliminarPaciente(id)}
                 >Eliminar</button>
             </div>
         </div>
