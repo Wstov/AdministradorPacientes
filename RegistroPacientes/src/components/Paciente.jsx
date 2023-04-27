@@ -1,8 +1,8 @@
 
 
-const Paciente = ({paciente, eliminarPaciente}) => {
-//DISTRUCTURIN
-const {nombre, propietario, email, fecha, sintomas, id} =  paciente
+const Paciente = ({ paciente, eliminarPaciente }) => {
+    //DISTRUCTURIN
+    const { nombre, propietario, email, fecha, sintomas, id } = paciente
 
 
     return (
